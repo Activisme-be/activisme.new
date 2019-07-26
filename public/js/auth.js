@@ -36886,16 +36886,28 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/sass/frontend.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/frontend.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*****************************************************************************************!*\
-  !*** multi ./resources/js/auth.js ./resources/sass/auth.scss ./resources/sass/app.scss ***!
-  \*****************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** multi ./resources/js/auth.js ./resources/sass/auth.scss ./resources/sass/app.scss ./resources/sass/frontend.scss ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/js/auth.js */"./resources/js/auth.js");
 __webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/sass/auth.scss */"./resources/sass/auth.scss");
-module.exports = __webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/sass/frontend.scss */"./resources/sass/frontend.scss");
 
 
 /***/ })

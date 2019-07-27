@@ -3,4 +3,27 @@
 
 // Variables
 @import 'settings/variables';
+
+$secondary: #801515 !default;
+
 @import '~bootstrap/scss/bootstrap';
+
+.jumbotron {
+    background-color: #B9210C;
+    color: white;
+    background-image: url("../images/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 330px;
+    height: 100vh;
+}
+
+.breakline-hero {
+    color: $white !important;
+}
+
+.height-hero-img
+{
+    height: 330px !important;
+    width: 100%;
+}

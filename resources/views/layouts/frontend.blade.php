@@ -72,6 +72,7 @@
                     <div class="col-sm-3 text-left myCols">
                         <h5>Nuttige links</h5>
                         <ul>
+                            <li><a href="{{ route('login') }}">Aanmelden</a></li>
                             <li><a href="">Onze visie</a></li>
                             <li><a href="">Ondersteun ons</a></li>
                             <li><a href="">Contact</a></li>

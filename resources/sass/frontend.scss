@@ -19,6 +19,8 @@ $secondary: #801515 !default;
     height: 100vh;
 }
 
+
+
 .breakline-hero {
     color: $white !important;
 }
@@ -49,6 +51,10 @@ body {
 }
 
 #myFooter {
+    // z-index: 1000;
+    // position: fixed;
+    // width: 100%;
+    // bottom: 0%;
     background-color: #373a48;
     color:white;
 }

@@ -1,9 +1,9 @@
 @extends('layouts.app', ['title' => 'Dashboard'])
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid py-3">
         <div class="page-header">
-            <div class="page-title">{{ config('app.name') }}</div>
+            <h1 class="page-title">{{ config('app.name') }}</h1>
             <div class="page-subtitle">Dashboard</div>
 
             @if ($currentUser->hasAnyRole(['admin', 'webmaster']))

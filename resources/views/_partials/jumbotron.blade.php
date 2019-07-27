@@ -1,4 +1,4 @@
-<div class="jumbotron height-hero-img jumbotron-fluid mb-4">
+<div class="jumbotron height-hero-img jumbotron-fluid {{ $utilities ?? ' mb-4' }}">
     <div class="container">
         <div class="row">
             <div class="offset-5 col-7">

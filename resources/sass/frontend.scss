@@ -21,8 +21,37 @@ $body-color: lighten(#000, 20%);
     height: 100vh;
 }
 
+.title-card {
+    color: $brand-base;
+}
+
+.article-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+a.title-card:hover, a.article-title:hover {
+    color: darken($brand-base, 10%);
+}
+
+.bg-section-news {
+    background-color: lighten(#C9C9C9, 15%);
+}
+
+.title-welcome {
+    color: $brand-base;
+}
+
+.bg-section-cause {
+    background-color: darken($white, 5%);
+}
+
 .btn-submit {
     @include button-variant(lighten($brand-base, 10%), lighten($brand-base, 10%));
+}
+
+.btn-volunteer {
+    @include button-variant(#8C8C8C, #8C8C8C);
 }
 
 .breakline-hero {
@@ -44,7 +73,12 @@ body {
 }
 
 .icon-contact {
-    color: $brand-brown;
+    color: $brand-base;
+}
+
+.icon-cause
+{
+    color: #8C8C8C;
 }
 
 .content{

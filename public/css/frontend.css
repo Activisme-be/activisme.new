@@ -12182,6 +12182,32 @@ a.text-dark:focus {
   height: 100vh;
 }
 
+.title-card {
+  color: #B9210C;
+}
+
+.article-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+a.title-card:hover,
+a.article-title:hover {
+  color: #891809;
+}
+
+.bg-section-news {
+  background-color: #efefef;
+}
+
+.title-welcome {
+  color: #B9210C;
+}
+
+.bg-section-cause {
+  background-color: #f2f2f2;
+}
+
 .btn-submit {
   color: #fff;
   background-color: #e92a0f;
@@ -12220,6 +12246,44 @@ a.text-dark:focus {
   box-shadow: 0 0 0 0.2rem rgba(236, 74, 51, 0.5);
 }
 
+.btn-volunteer {
+  color: #fff;
+  background-color: #8C8C8C;
+  border-color: #8C8C8C;
+}
+
+.btn-volunteer:hover {
+  color: #fff;
+  background-color: #797979;
+  border-color: #737373;
+}
+
+.btn-volunteer:focus,
+.btn-volunteer.focus {
+  box-shadow: 0 0 0 0.2rem rgba(157, 157, 157, 0.5);
+}
+
+.btn-volunteer.disabled,
+.btn-volunteer:disabled {
+  color: #fff;
+  background-color: #8C8C8C;
+  border-color: #8C8C8C;
+}
+
+.btn-volunteer:not(:disabled):not(.disabled):active,
+.btn-volunteer:not(:disabled):not(.disabled).active,
+.show > .btn-volunteer.dropdown-toggle {
+  color: #fff;
+  background-color: #737373;
+  border-color: #6c6c6c;
+}
+
+.btn-volunteer:not(:disabled):not(.disabled):active:focus,
+.btn-volunteer:not(:disabled):not(.disabled).active:focus,
+.show > .btn-volunteer.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(157, 157, 157, 0.5);
+}
+
 .breakline-hero {
   color: #fff !important;
 }
@@ -12240,7 +12304,11 @@ body {
 }
 
 .icon-contact {
-  color: #56423D;
+  color: #B9210C;
+}
+
+.icon-cause {
+  color: #8C8C8C;
 }
 
 .content {

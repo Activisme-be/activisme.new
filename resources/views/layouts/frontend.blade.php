@@ -20,7 +20,7 @@
         <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div id="app">
+        <div id="app" class="content">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -32,9 +32,20 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
-                            <li ></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Onze visie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Kalender</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Petities</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">Nieuws</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Ondersteun ons</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">Contact</a>
@@ -48,5 +59,54 @@
                 @yield('content')
             </main>
         </div>
+        <footer id="myFooter">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-sm-3 text-left myCols">
+                        <h5>Locatie</h5>
+                        Activisme_BE<br/>
+                        Zonnebeekseweg 343<br/>
+                        8900 Ieper, België<br/>
+                        00/000.00.00<br/>
+                    </div>
+                    <div class="col-sm-3 text-left myCols">
+                        <h5>Nuttige links</h5>
+                        <ul>
+                            <li><a href="">Onze visie</a></li>
+                            <li><a href="">Ondersteun ons</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 text-left myCols">
+                        <h5>Ondersteund</h5>
+                        <ul>
+                            <li><a href="http://www.icanw.org/">ICAN</a></li>
+                            <li><a href="https://vrede.be/">Vrede VZW</a></li>
+                            <li><a href="https://nonukes.be/">Belgische Coalitie Kernwapens</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 text-left myCols">
+                        <h5>Voorwaarden</h5>
+                        <ul>
+                            <li><a href="">Algemene voorwaarden</a></li>
+                            <li><a href="">Privacy beleid</a></li>
+                        </ul>
+
+                        <h5>Contact</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/ActivismeBE/"><i class="fe social-facebook fe-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/Activisme_be"><i class="fe social-twitter fe-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href=""><i class="fe social-mail fe-mail"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="container">
+                    <p class="ml-0 text-left">&copy; {{ date('Y') }} {{ config('app.name') }} - Alle rechten voorbehouden</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

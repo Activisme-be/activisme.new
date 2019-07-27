@@ -14,11 +14,11 @@
                         <hr class="breakline-hero my-3">
 
                         <p class="lead">
-                            <a href="" role="button" class="btn btn-secondary">
+                            <a href="" role="button" class="btn shadow-sm btn-secondary">
                                 Onze visie
                             </a>
 
-                            <a href="" role="button" class="btn btn-secondary">
+                            <a href="" role="button" class="btn shadow-sm btn-secondary">
                                 Ondersteun ons
                             </a>
                         </p>
@@ -26,9 +26,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container-fluid py-3">
-
     </div>
 @endsection

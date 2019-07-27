@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => 'Dashboard'])
 
 @section('content')
-    <div class="container-fluid py-3">
+    <div class="container-fluid">
         <div class="page-header">
             <div class="page-title">{{ config('app.name') }}</div>
             <div class="page-subtitle">Dashboard</div>

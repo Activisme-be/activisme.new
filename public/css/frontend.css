@@ -12176,9 +12176,9 @@ a.text-dark:focus {
   background-color: #B9210C;
   color: white;
   background-image: url(/images/banner.jpg?078bcba301dd8d019934ac714b2f4937);
-  background-position: center;
+  background-position: 20px;
   background-repeat: no-repeat;
-  background-size: 100% 330px;
+  background-size: auto 330px;
   height: 100vh;
 }
 

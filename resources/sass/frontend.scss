@@ -13,13 +13,11 @@ $secondary: #801515 !default;
     background-color: #B9210C;
     color: white;
     background-image: url("../images/banner.jpg");
-    background-position: center;
+    background-position: 20px;
     background-repeat: no-repeat;
-    background-size: 100% 330px;
+    background-size: auto 330px;
     height: 100vh;
 }
-
-
 
 .breakline-hero {
     color: $white !important;

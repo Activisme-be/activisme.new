@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Composers\KioskComposer;
 use App\Composers\LayoutComposer;
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Telescope\TelescopeServiceProvider;
 
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if ($this->app->isLocal()) {
             $this->app->register(TelescopeServiceProvider::class);
+            $this->app->register(IdeHelperServiceProvider::class);
         }
     }
 }

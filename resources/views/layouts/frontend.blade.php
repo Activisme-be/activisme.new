@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ $title ?? 'Index' }} | {{ config('app.name', 'Laravel') }}</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,7 +22,7 @@
     <body>
         <div id="app" class="content">
             <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-                <div class="container-fluid">
+                <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
@@ -47,8 +47,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="">Ondersteun ons</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">Contact</a>
+                            <li class="nav-item {{ active('guest.contact') }} ">
+                                <a class="nav-link" href="{{ route('guest.contact') }}">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -75,7 +75,7 @@
                             <li><a href="{{ route('login') }}">Aanmelden</a></li>
                             <li><a href="">Onze visie</a></li>
                             <li><a href="">Ondersteun ons</a></li>
-                            <li><a href="">Contact</a></li>
+                            <li><a href="{{ route('guest.contact') }}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-3 text-left myCols">
@@ -97,7 +97,7 @@
                         <ul class="list-inline">
                             <li class="list-inline-item"><a href="https://www.facebook.com/ActivismeBE/"><i class="fe social-facebook fe-facebook"></i></a></li>
                             <li class="list-inline-item"><a href="https://twitter.com/Activisme_be"><i class="fe social-twitter fe-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href=""><i class="fe social-mail fe-mail"></i></a></li>
+                            <li class="list-inline-item"><a href="{{ route('guest.contact') }}"><i class="fe social-mail fe-mail"></i></a></li>
                         </ul>
                     </div>
                 </div>

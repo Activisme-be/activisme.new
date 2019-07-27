@@ -4,7 +4,9 @@
 // Variables
 @import 'settings/variables';
 
+// Page group specific variables
 $secondary: #801515 !default;
+$body-color: lighten(#000, 20%);
 
 @import '~bootstrap/scss/bootstrap';
 @import 'modules/icons';
@@ -13,10 +15,14 @@ $secondary: #801515 !default;
     background-color: #B9210C;
     color: white;
     background-image: url("../images/banner.jpg");
-    background-position: 20px;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: auto 330px;
     height: 100vh;
+}
+
+.btn-submit {
+    @include button-variant(lighten($brand-base, 10%), lighten($brand-base, 10%));
 }
 
 .breakline-hero {
@@ -35,6 +41,10 @@ body {
     flex-direction: column;
     -webkit-flex-direction: column;
     height: 100%;
+}
+
+.icon-contact {
+    color: $brand-brown;
 }
 
 .content{

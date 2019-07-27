@@ -36904,10 +36904,10 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/js/auth.js */"./resources/js/auth.js");
-__webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/sass/auth.scss */"./resources/sass/auth.scss");
-__webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/sass/frontend.scss */"./resources/sass/frontend.scss");
+__webpack_require__(/*! C:\Users\Gebruiker\Documents\activisme.new\resources\js\auth.js */"./resources/js/auth.js");
+__webpack_require__(/*! C:\Users\Gebruiker\Documents\activisme.new\resources\sass\auth.scss */"./resources/sass/auth.scss");
+__webpack_require__(/*! C:\Users\Gebruiker\Documents\activisme.new\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Gebruiker\Documents\activisme.new\resources\sass\frontend.scss */"./resources/sass/frontend.scss");
 
 
 /***/ })

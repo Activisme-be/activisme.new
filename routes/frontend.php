@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Contact\FrontController as ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,7 @@ Auth::routes(['register' => false]);
 
 // Home routes
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+
+// Contact routes
+Route::get('/contact', [ContactController::class, 'index'])->name('guest.contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('guest.contact.store');

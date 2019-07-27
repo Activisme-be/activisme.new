@@ -49355,7 +49355,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/tjoosten/Documents/activisme.new/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Gebruiker\Documents\activisme.new\resources\js\app.js */"./resources/js/app.js");
 
 
 /***/ })

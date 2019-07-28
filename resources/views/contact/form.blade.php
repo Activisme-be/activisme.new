@@ -3,7 +3,7 @@
 @section('content')
     @include ('_partials.jumbotron', [
         'title' => $title,
-        'buttons' => false,
+        'buttons' => true,
         'description' => 'Hebt u een vraag of opmerking? Aarzel dan niet om ons te contacteren. Doormiddel van het onderstaande formulier.'
     ])
 
@@ -68,7 +68,7 @@
             </div>
 
             <div class="col-4">
-                <div class="card">
+                <div class="card shadow-sm">
                     <div class="card-header">
                         Contact gegevens
                     </div>

@@ -12182,7 +12182,8 @@ a.text-dark:focus {
   height: 100vh;
 }
 
-.title-card {
+.title-card,
+.brand-title {
   color: #B9210C;
 }
 

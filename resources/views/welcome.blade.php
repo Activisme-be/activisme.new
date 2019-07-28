@@ -35,7 +35,7 @@
                                 <i class="fa icon-cause fa-circle fa-4x fa-radiation"></i>
 
                                 <a href="" class="pt-3 text-decoration-none h4 title-card">
-                                    Nuclaire ban
+                                    Kernwapen ban
                                 </a>
 
                                 <p class="card-text">

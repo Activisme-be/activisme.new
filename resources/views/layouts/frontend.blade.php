@@ -45,8 +45,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="">Nieuws</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">Ondersteun ons</a>
+                            <li class="nav-item {{ active('support-us') }}">
+                                <a class="nav-link" href="{{ route('support-us') }}">Ondersteun ons</a>
                             </li>
                             <li class="nav-item {{ active('guest.contact') }} ">
                                 <a class="nav-link" href="{{ route('guest.contact') }}">Contact</a>
@@ -75,7 +75,7 @@
                         <ul>
                             <li><a href="{{ route('login') }}">Aanmelden</a></li>
                             <li><a href="">Onze visie</a></li>
-                            <li><a href="">Ondersteun ons</a></li>
+                            <li><a href="{{ route('support-us') }}">Ondersteun ons</a></li>
                             <li><a href="{{ route('guest.contact') }}">Contact</a></li>
                         </ul>
                     </div>
@@ -90,8 +90,8 @@
                     <div class="col-sm-3 text-left myCols">
                         <h5>Voorwaarden</h5>
                         <ul>
-                            <li><a href="">Algemene voorwaarden</a></li>
-                            <li><a href="">Privacy beleid</a></li>
+                            <li><a href="{{ route('policies.terms-of-service') }}">Algemene voorwaarden</a></li>
+                            <li><a href="{{ route('policies.privacy') }}">Privacy beleid</a></li>
                         </ul>
 
                         <h5>Contact</h5>

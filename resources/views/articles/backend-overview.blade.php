@@ -48,12 +48,22 @@
                                         <th class="border-top-0" scope="col">Status</th>
                                         <th class="border-top-0" scope="col">Titel</th>
                                         <th class="border-top-0" scope="col">Weergaves</th>
+                                        <th class="border-top-0" scope="col">&nbsp;</th> {{-- Column only dedicated to the function shortcuts --}}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($articles as $article) {{-- Loop trough the articles --}}
                                         <tr>
                                             <td class="font-weight-bold text-secondary">{{ $article->creator->name ?? config('app.name') | ucfirst }}</td>
+
+                                            <td></td>
+
+                                            <td>{{ $article->titel | ucfirst }}</td>
+                                            <td class="text-muted">
+                                                <i class="fe fe-eye mr-2"></i>  {aantal weergaves}
+                                            </td>
+
+                                            <td></td>
                                         </tr>
                                     @endforeach {{-- /// END loop --}}
                                 </tbody>

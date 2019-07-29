@@ -60,8 +60,8 @@ class ManagementController extends Controller
      *
      * @throws \Throwable <- Native PHP class
      *
-     * @param ArticleFormRequest $input The form request class that handles the validation and holds request data.
-     * @param Article $article Database model class for the news articles.
+     * @param ArticleFormRequest $input     The form request class that handles the validation and holds request data.
+     * @param Article            $article   Database model class for the news articles.
      * @return RedirectResponse
      */
     public function store(ArticleFormRequest $input, Article $article): RedirectResponse

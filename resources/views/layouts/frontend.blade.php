@@ -71,7 +71,7 @@
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
                                         <a href="{{ route('home') }}" class="dropdown-item">
-                                            <i class="fe fe-chevrons-right text-muted"></i> Naar backend
+                                            <i class="fe fe-chevrons-right mr-1 text-muted"></i> Naar backend
                                         </a>
 
                                         <a class="dropdown-item" href=" {{ route('account.settings') }}">

@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Articles;
 
+use App\Http\Requests\ArticleFormRequest;
+use App\Models\Category;
+use DB;
 use Illuminate\Contracts\Support\Renderable;
 use App\Models\Article;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * Class ManagementController
@@ -40,13 +44,33 @@ class ManagementController extends Controller
     /**
      * Method for displaying the create view of an news article.
      *
+     * @param  Category $categories The database model for the categories in the application.
      * @return Renderable
      */
-    public function create(): Renderable
+    public function create(Category $categories): Renderable
     {
         return view('articles.create', [
             'statusTypes' => [0 => 'Ik wil dit bericht bewaren als klad versie.', 1 => 'Ik wil dit bericht publiceren.'],
-            'categories'  => [], // TODO: Build up article categorie scaffolding.
+            'categories'  => $categories->pluck('id', 'naam'),
         ]);
+    }
+
+    /**
+     * Method for storing the news article in the application.
+     *
+     * @throws \Throwable <- Native PHP class
+     *
+     * @param ArticleFormRequest $input The form request class that handles the validation and holds request data.
+     * @param Article $article Database model class for the news articles.
+     * @return RedirectResponse
+     */
+    public function store(ArticleFormRequest $input, Article $article): RedirectResponse
+    {
+        DB::transaction(static function () use ($input, $article): void {
+            $article = $article->create($input->all())->setCreator($input->user());
+            $input->user()->logActivity($article, 'Nieuwsberichten', "Heeft een nieuwsbericht toegevoegd met de titel {$article->titel}");
+        });
+
+        return redirect()->route('admin.news.overview');
     }
 }

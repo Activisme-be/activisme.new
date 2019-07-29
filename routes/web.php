@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Articles\CategoryController as ArticleCategoryController;
 use App\Http\Controllers\Articles\ManagementController as ArticleManagementController;
 use App\Http\Controllers\Auth\PasswordSecurityController;
 use App\Http\Controllers\NotificationController;
@@ -43,7 +44,17 @@ Route::post('/2faVerify', function () {
 
 // Backend routes
 Route::prefix('admin')->name('admin.')->group(static function (): void {
+
     // Article routes
-    Route::get('/artikelen', [ArticleManagementController::class, 'index'])->name('news.overview');
-    Route::get('/artikelen/nieuw', [ArticleManagementController::class, 'create'])->name('news.create');
+    Route::name('news.')->prefix('artikelen')->group(static function (): void {
+        Route::get('/', [ArticleManagementController::class, 'index'])->name('overview');
+        Route::get('/nieuw', [ArticleManagementController::class, 'create'])->name('create');
+        Route::post('/nieuw', [ArticleManagementController::class, 'store'])->name('store');
+
+        // Category routes
+        Route::name('categories.')->prefix('categorieen')->group(static function (): void {
+            Route::get('/', [ArticleCategoryController::class, 'index'])->name('overview');
+            Route::get('/nieuw', [ArticleCategoryController::class, 'create'])->name('create');
+        });
+    });
 });

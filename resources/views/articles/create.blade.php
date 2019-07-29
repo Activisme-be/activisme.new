@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-md-9">
-                <form action="" method="" class="card card-body border-0 shadow-sm">
+                <form action="{{ route('admin.news.store') }}" method="POST" class="card card-body border-0 shadow-sm">
                     <h6 class="border-bottom border-gray pb-1 mb-3">Nieuwsbericht toevoegen</h6>
 
                     @csrf {{-- Form field protection --}}

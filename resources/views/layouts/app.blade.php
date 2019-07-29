@@ -85,7 +85,7 @@
                             </a>
 
                             <a href="{{ route('welcome') }}" class="dropdown-item">
-                                <i class="fe fe-chevrons-left text-secondary"></i> Verlaat backend
+                                <i class="fe fe-chevrons-left mr-1 text-secondary"></i> Verlaat backend
                             </a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

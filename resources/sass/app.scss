@@ -7,11 +7,29 @@
 @import 'modules/icons';
 @import 'modules/page-header';
 
+// Backend specific variables
+$body-bg: #f2f2f2;
+$body-color: lighten(#000, 20%);
+$card-cap-bg: 	darken(#8C8C8C, 5%) !default;
+$card-cap-color: #fff;
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "~primer-blankslate/index.scss";
 
-// Stamp partial 
+.btn-brand {
+    @include button-variant($brand-base, $brand-base);
+}
+
+.icon-sidenav {
+    color: #8C8C8C;
+}
+
+.btn-outline-brand {
+    @include button-outline-variant($brand-base, $brand-base);
+}
+
+// Stamp partial
 .stamp {
   color: #fff;
   background: #868e96;
@@ -23,6 +41,10 @@
   text-align: center;
   border-radius: 3px;
   font-weight: 600;
+}
+
+.icon-navbar {
+    color: $brand-base;
 }
 
 .stamp-md {
@@ -41,7 +63,7 @@
 }
 
 .form-search {
-  width: 225px;
+  width: 275px;
 }
 
 .dropdown-header {
@@ -50,7 +72,7 @@
 }
 
 .qr-2fa-code {
-  height: 175px; 
+  height: 175px;
   width: 175px;
 }
 

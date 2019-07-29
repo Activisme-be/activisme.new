@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Articles\ManagementController as ArticleManagementController;
+use App\Http\Controllers\Auth\PasswordSecurityController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Users\AccountController;
-use App\Http\Controllers\Auth\PasswordSecurityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +40,10 @@ Route::post('/gebruiker/deactiveer-2fa', [PasswordSecurityController::class, 'di
 Route::post('/2faVerify', function () {
     return redirect()->route('home');
 })->name('2faVerify')->middleware('2fa');
+
+// Backend routes
+Route::prefix('admin')->name('admin.')->group(static function (): void {
+    // Article routes
+    Route::get('/artikelen', [ArticleManagementController::class, 'index'])->name('news.overview');
+    Route::get('/artikelen/nieuw', [ArticleManagementController::class, 'create'])->name('news.create');
+});

@@ -32,7 +32,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav @guest ml-auto @endif">
                             <li class="nav-item">
                                 <a class="nav-link" href="">Onze visie</a>
                             </li>
@@ -52,6 +52,45 @@
                                 <a class="nav-link" href="{{ route('guest.contact') }}">Contact</a>
                             </li>
                         </ul>
+
+                        @auth
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('notifications.index') }}">
+                                        <i class="fe fe-bell mr-1"></i>
+                                        <span style="margin-top: -.25rem;" class="badge badge-pill align-middle badge-danger">
+                                            {{ $currentUser->unreadNotifications()->count() }}
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="{{ config('app.url') }}" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ $currentUser->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
+                                        <a href="{{ route('home') }}" class="dropdown-item">
+                                            <i class="fe fe-chevrons-right text-muted"></i> Naar backend
+                                        </a>
+
+                                        <a class="dropdown-item" href=" {{ route('account.settings') }}">
+                                            <i class="fe fe-sliders mr-1 text-muted"></i> Instellingen
+                                        </a>
+
+                                        <div class="dropdown-divider"></div>
+
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fe text-danger mr-1 fe-power"></i> Afmelden
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf {{-- Form field protection --}}
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </nav>
@@ -73,7 +112,12 @@
                     <div class="col-sm-3 text-left myCols">
                         <h5>Nuttige links</h5>
                         <ul>
-                            <li><a href="{{ route('login') }}">Aanmelden</a></li>
+                            @guest
+                                <li><a href="{{ route('login') }}">Aanmelden</a></li>
+                            @else
+                                <li><a href="{{ route('home') }}">Backend</a></li>
+                            @endif
+
                             <li><a href="">Onze visie</a></li>
                             <li><a href="{{ route('support-us') }}">Ondersteun ons</a></li>
                             <li><a href="{{ route('guest.contact') }}">Contact</a></li>

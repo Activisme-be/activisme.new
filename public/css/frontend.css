@@ -12285,6 +12285,23 @@ a.article-title:hover {
   box-shadow: 0 0 0 0.2rem rgba(157, 157, 157, 0.5);
 }
 
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #000;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
+
+.dropdown-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.dropdown-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .breakline-hero {
   color: #fff !important;
 }

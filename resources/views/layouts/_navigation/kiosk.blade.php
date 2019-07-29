@@ -1,19 +1,19 @@
 <a class="nav-link {{ active('kiosk.dashboard') }}" href="{{ route('kiosk.dashboard') }}">
-    <i class="fe fe-home mr-1 text-secondary"></i> Dashboard
+    <i class="fe icon-navbar fe-home mr-1"></i> Dashboard
 </a>
 
 @if ($currentUser->hasAnyRole(['admin', 'webmaster']))
     <a class="nav-link {{ active('users.*') }}" href="{{ route('users.index') }}">
-        <i class="fe fe-users mr-1 text-secondary"></i> Gebruikers
+        <i class="fe icon-navbar fe-users mr-1"></i> Gebruikers
     </a>
 
     <a class="nav-link {{ active('audit.*') }}" href="{{ route('audit.overview') }}">
-        <i class="fe fe-activity mr-1 text-seoncdary"></i> Audit
+        <i class="fe icon-navbar fe-activity mr-1"></i> Audit
     </a>
 @endif
 
 @if ($currentUser->hasRole('webmaster'))
     <a class="nav-link {{ active('alerts.*') }}" href="{{ route('alerts.index') }}">
-        <i class="fe fe-bell mr-1 text-secondary"></i> Alerts
+        <i class="fe icon-navbar fe-bell mr-1"></i> Alerts
     </a>
 @endif

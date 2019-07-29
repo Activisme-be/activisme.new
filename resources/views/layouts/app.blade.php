@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/94dda7fdbf.js"></script>
 
     <!-- Fonts -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.ico') }}"/>
@@ -33,11 +34,19 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                    &nbsp;
-                </ul>
-
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ config('app.url') }}" id="createDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe fe-plus mr-1"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('admin.news.create') }}">
+                                <i class="far fa-newspaper mr-2 text-secondary"></i> Artikel
+                            </a>
+                        </div>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('notifications.index') }}">
                             <i class="fe fe-bell mr-1"></i>
@@ -48,7 +57,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{ config('app.url') }}" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ $currentUser->name }}
                         </a>
 
@@ -68,10 +77,15 @@
                             @endif
 
                             <div class="dropdown-divider"></div>
+
                             <h6 class="dropdown-header font-weight-bold">Account</h6>
 
                             <a class="dropdown-item" href=" {{ route('account.settings') }}">
                                 <i class="fe fe-sliders mr-1 text-secondary"></i> Instellingen
+                            </a>
+
+                            <a href="{{ route('welcome') }}" class="dropdown-item">
+                                <i class="fe fe-chevrons-left text-secondary"></i> Verlaat backend
                             </a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

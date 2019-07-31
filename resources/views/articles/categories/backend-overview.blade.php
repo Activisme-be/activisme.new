@@ -39,6 +39,7 @@
                 @else {{-- There are news categories found --}}
                     <div class="card card-body border-0 shadow-sm">
                         <h6 class="border-bottom border-gray pb-1 mb-3">Nieuws categorieen</h6>
+                         @include('flash::message') {{-- Flash session view partial --}}
 
                         <div class="table-responsive">
                             <table class="mb-0 table table-sm table-hover">
@@ -56,7 +57,20 @@
                                         <tr>
                                             <td class="text-secondary font-weight-bold">{{ $category->naam | ucfirst  }}</td>
                                             <td>{{ $category->creator->name ?? config('app.name') | ucfirst }}</td>
-                                            <td> {{ $category->articles->count() }} berichten</td>
+                                            <td>{{ $category->articles->count() }} berichten</td>
+                                            <td>{{ $category->created_at->diffForHumans() }}</td>
+
+                                            <td> {{-- Option shortcuts --}}
+                                                <span class="float-right">
+                                                    <a href="" class="text-secondary mr-1 text-decoration-none">
+                                                        <i class="fe fe-eye"></i>
+                                                    </a>
+
+                                                    <a href="{{ route('admin.news.categories.destroy', $category) }}" data-method="delete" class="text-danger text-decoration-none">
+                                                        <i class="fe fe-trash-2"></i>
+                                                    </a>
+                                                </span>
+                                            </td> {{-- /// Option shortcuts --}}
                                         </tr>
                                     @endforeach {{-- /// END loop --}}
                                 </tbody>

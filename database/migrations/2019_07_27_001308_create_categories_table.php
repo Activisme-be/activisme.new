@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('creator_id')->nullable();
             $table->string('section', 30);
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('naam', 50);
             $table->text('beschrijving');
             $table->timestamps();

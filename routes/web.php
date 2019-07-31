@@ -56,6 +56,7 @@ Route::prefix('admin')->name('admin.')->group(static function (): void {
             Route::get('/', [ArticleCategoryController::class, 'index'])->name('overview');
             Route::get('/nieuw', [ArticleCategoryController::class, 'create'])->name('create');
             Route::post('/nieuw', [ArticleCategoryController::class, 'store'])->name('store');
+            Route::get('/verwijder/{category}', [ArticleCategoryController::class, 'destroy'])->name('destroy');
         });
     });
 });

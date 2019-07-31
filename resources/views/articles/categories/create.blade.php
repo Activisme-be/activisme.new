@@ -20,7 +20,7 @@
                 @include ('articles._partials.sidenav')
             </div>
             <div class="col-md-9">
-                <form action="" method="POST" class="card card-body shadow-sm border-0">
+                <form action="{{ route('admin.news.categories.store') }}" method="POST" class="card card-body shadow-sm border-0">
                     <h6 class="border-bottom border-grat pb-1 mb-3">Categorie toevoegen</h6>
 
                     @csrf {{-- Form field protection --}}

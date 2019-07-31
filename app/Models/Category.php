@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Models\Traits\HasCreators;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Sluggable\HasSlug;
+use App\Models\Traits\HasSluggable;
 
 /**
  * Class Category
@@ -15,14 +17,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Category extends Model
 {
-    use HasCreators;
+    use HasCreators, HasSlug, HasSluggable;
 
     /**
      * Guarded fields for the internal mass-assignment system.
      *
      * @var array
      */
-    protected $guarded = ['id', 'section'];
+    protected $guarded = ['id'];
 
     /**
      * Data relation for the attached news articles.

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Articles;
 
-use App\Http\Controllers\CategoryFormRequest;
 use App\Models\Category;
+use App\Http\Requests\CategoryFromRequest;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class CategoryController
@@ -23,7 +24,7 @@ class CategoryController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth', '2fa', 'forbid-banned-user', 'portal:application'])->only(['index']);
+        $this->middleware(['auth', '2fa', 'forbid-banned-user', 'portal:application']);
     }
 
     /**
@@ -48,8 +49,26 @@ class CategoryController extends Controller
         return view('articles.categories.create');
     }
 
-    public function store(CategoryFormRequest $request, Category $category): RedirectResponse
+    /**
+     * Method for storing an ew news article in the application.
+     *
+     * @throws \Throwable <- Native PHP class
+     *
+     * @param CategoryFromRequest   $request    The instance that handles the validation and request data
+     * @param Category              $category   The category model class from the application.
+     * @return RedirectResponse
+     */
+    public function store(CategoryFromRequest $request, Category $category): RedirectResponse
     {
+        DB::transaction(static function () use ($request, $category): void {
+            $request->merge(['section' => 'news']);
+            $category->create($request->all())->setCreator($request->user());
 
+            if ($category->count() > 0) { // Flash message is only needed when records already on the DB table.
+                flash("De nieuws category {$category->naam} is toegevoegd aan " . config('app.name'));
+            }
+        });
+
+        return redirect()->route('admin.news.categories.overview');
     }
 }

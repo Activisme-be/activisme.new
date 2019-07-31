@@ -25,7 +25,7 @@
                     <h6 class="border-bottom border-gray pb-1 mb-3">Nieuwsbericht toevoegen</h6>
 
                     @csrf {{-- Form field protection --}}
-                    @include ('flash::message') {{-- Flazsh session view partial --}}
+                    @include ('flash::message') {{-- Flash session view partial --}}
 
                     <div class="form-row">
                         <div class="form-group col-12">
@@ -87,8 +87,9 @@
                             </button>
 
                             <button type="reset" class="btn btn-light">
-                                <i class="fe fe-rotate-ccw text-danger"></i> Reset</div>
-                        </button>
+                                <i class="fe fe-rotate-ccw text-danger"></i> Reset
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>

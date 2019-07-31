@@ -74,6 +74,12 @@
                                         <i class="fe fe-home mr-1 text-secondary"></i> Kiosk
                                     </a>
                                 @endif
+
+                                @if ($currentUser->hasAnyRole(['vrijwilligers', 'admin', 'webmaster']))
+                                    <a class="dropdown-item" href="">
+                                        <i class="fe fe-users mr-1 text-secondary"></i> Vrijwilligers
+                                    </a>
+                                @endif
                             @endif
 
                             <div class="dropdown-divider"></div>

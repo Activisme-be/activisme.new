@@ -56,14 +56,31 @@
                                         <tr>
                                             <td class="font-weight-bold text-secondary">{{ $article->creator->name ?? config('app.name') | ucfirst }}</td>
 
-                                            <td></td>
+                                            <td> {{-- Status indicator --}}
+                                                @if (! $article->is_public)
+                                                    <span class="badge text-white badge-info">Klad versie</span>
+                                                @elseif ($article->is_public && $article->publicatie_datum->gt(now()))
+                                                    <span class="badge badge-light">Geplande publicatie</span>
+                                                @elseif ($article->is_public && $article->publicatie_datum->lt(now()))
+                                                    <span class="badge badge-success">Gepubliceerd</span>
+                                                @else
+                                                    <span class="badge badge-secondary">Onbekend</span>
+                                                @endif
+                                            </td> {{-- /// END status indicator --}}
 
                                             <td>{{ $article->titel | ucfirst }}</td>
+
                                             <td class="text-muted">
-                                                <i class="fe fe-eye mr-2"></i>  {aantal weergaves}
+                                                <i class="fe fe-eye mr-1"></i>  {{ $article->getUniqueViews() }}
                                             </td>
 
-                                            <td></td>
+                                            <td>
+                                                <span class="float-right">
+                                                    <a href="" class="text-decoration-none text-muted">
+                                                        <i class="fe fe-eye"></i>
+                                                    </a>
+                                                </span>
+                                            </td>
                                         </tr>
                                     @endforeach {{-- /// END loop --}}
                                 </tbody>

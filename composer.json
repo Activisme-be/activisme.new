@@ -13,6 +13,7 @@
         "actb/laravel-validation-rules": "dev-master",
         "bacon/bacon-qr-code": "^2.0",
         "cybercog/laravel-ban": "^3.5",
+        "cyrildewit/eloquent-viewable": "^4.0",
         "fideloper/proxy": "^4.0",
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.8.*",

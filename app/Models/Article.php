@@ -22,10 +22,20 @@ class Article extends Model implements ViewableContract
      *
      * @var array
      */
-    protected $guarded = ['id', 'creator_id', 'category_id'];
+    protected $guarded = ['id', 'creator_id'];
 
+    /**
+     * Array of fields that needs to be mutated to Date attributes.
+     *
+     * @var array
+     */
     protected $dates = ['publicatie_datum'];
 
+    /**
+     * Function for getting the unique page views from an article.
+     *
+     * @return int
+     */
     public function getUniqueviews(): int
     {
         return views($this)->unique()->count();

@@ -20,7 +20,7 @@ class CreateArticlesTable extends Migration
             $table->boolean('is_public')->default(false);
             $table->string('titel');
             $table->text('bericht');
-            $table->timestamp('publicatie_datum');
+            $table->date('publicatie_datum');
             $table->timestamps();
 
             // Indexes

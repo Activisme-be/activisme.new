@@ -35,7 +35,7 @@ class ManagementController extends Controller
      */
     public function index(Article $articles): Renderable
     {
-        $articles = $articles->latest()->simplePaginate();
+        $articles = $articles->latest('publicatie_datum')->simplePaginate();
         $articleCount = $articles->count();
 
         return view('articles.backend-overview', compact('articles', 'articleCount'));
@@ -51,7 +51,7 @@ class ManagementController extends Controller
     {
         return view('articles.create', [
             'statusTypes' => [0 => 'Ik wil dit bericht bewaren als klad versie.', 1 => 'Ik wil dit bericht publiceren.'],
-            'categories'  => $categories->pluck('id', 'naam'),
+            'categories'  => $categories->pluck('naam', 'id'),
         ]);
     }
 
@@ -66,6 +66,8 @@ class ManagementController extends Controller
      */
     public function store(ArticleFormRequest $input, Article $article): RedirectResponse
     {
+        $input->merge(['category_id' => $input->category_id]);
+
         DB::transaction(static function () use ($input, $article): void {
             $article = $article->create($input->all())->setCreator($input->user());
             $input->user()->logActivity($article, 'Nieuwsberichten', "Heeft een nieuwsbericht toegevoegd met de titel {$article->titel}");

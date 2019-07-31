@@ -37,6 +37,34 @@
                         </a>
                     </div>
                 @else {{-- There are news categories found --}}
+                    <div class="card card-body border-0 shadow-sm">
+                        <h6 class="border-bottom border-gray pb-1 mb-3">Nieuws categorieen</h6>
+
+                        <div class="table-responsive">
+                            <table class="mb-0 table table-sm table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="border-top-0" scope="col">Naam</th>
+                                        <th class="border-top-0" scope="col">Toegevoegd door</th>
+                                        <th class="border-top-0" scope="col">Aantal nieuwsartikelen</th>
+                                        <th class="border-top-0" scope="col">Toegevoegd op</th>
+                                        <th class="border-top-0" scope="col">&nbsp;</th> {{-- Column only dedicated for the functions --}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($categories as $category) {{-- Loop trough the categories --}}
+                                        <tr>
+                                            <td class="text-secondary font-weight-bold">{{ $category->naam | ucfirst  }}</td>
+                                            <td>{{ $category->creator->name ?? config('app.name') | ucfirst }}</td>
+                                            <td> {{ $category->articles->count() }} berichten</td>
+                                        </tr>
+                                    @endforeach {{-- /// END loop --}}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        {{ $categories->links() }} {{-- Pagination view partial --}}
+                    </div>
                 @endif {{-- /// End view dispaly logic --}}
             </div> {{-- /// Content --}}
         </div>
